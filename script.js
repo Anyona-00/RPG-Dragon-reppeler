@@ -21,6 +21,9 @@ const monsterStats = document.querySelector("#monsterStats");
 const monsterName = document.querySelector("#monsterName");
 const monsterHealthText = document.querySelector("#monsterHealth");
 const storeImage = document.querySelector(".img-store")
+const caveImage = document.querySelector(".img-cave")
+const slimeImage = document.querySelector(".img-slime")
+const beastImage = document.querySelector(".img-beast")
 
 
 /*weapons*/
@@ -113,6 +116,9 @@ button3.onclick = fightDragon;
 function update(location) {
   monsterStats.style.display = "none";
   storeImage.style.display = "none";
+  caveImage.style.display = "none";
+  slimeImage.style.display = "none";
+  beastImage.style.display = "none";
   button1.innerText = location["button text"][0];
   button2.innerText = location["button text"][1];
   button3.innerText = location["button text"][2];
@@ -126,6 +132,7 @@ function update(location) {
 /*use the data in objects in the location array based on the index*/
 function goTown() {
   update(locations[0]);
+  
 }
 
 function goStore() {
@@ -135,6 +142,7 @@ function goStore() {
 
 function goCave() {
   update(locations[2]);
+  caveImage.style.display = "block";
 }
 
 
@@ -186,11 +194,13 @@ function sellWeapon() {
 function fightSlime() {
   fighting = 0;
   goFight();
+  slimeImage.style.display = "block";
 }
 
 function fightBeast() {
   fighting = 1;
   goFight();
+ beastImage.style.display = "block";
 }
 
 function fightDragon() {

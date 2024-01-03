@@ -19,6 +19,7 @@ body {
   margin: 30px auto 0px;
   padding: 10px;
   border-radius: 20px;
+  margin-bottom: 3rem;
 }
 
 #controls,
@@ -54,10 +55,34 @@ button {
   display: flex;
   gap: 1rem;
 }
+
 .img-store{
   height: 400px;
   width: 600px;
   border-radius: 10px;
-  align-self: center;
   display: none;
+}
+
+.img-cave{
+  height: 400px;
+  width: 600px;
+  border-radius: 10px;
+ margin-left: 616px;
+ display: none;
+}
+
+.img-slime{
+  margin-left: 200px;
+  border-radius: 20px;
+  display: none;
+}
+
+
+.img-beast{
+  height: 400px;
+  width: 600px;
+  border-radius: 10px;
+ margin-left: 200px;
+ display: none;
+ 
 }
