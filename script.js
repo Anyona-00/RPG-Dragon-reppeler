@@ -1,11 +1,15 @@
-let xp = 0;
+
+
+let xp = 0;  /*XP expience points*/
 let health = 100;
 let gold = 50;
 let currentWeapon = 0;
 let fighting;
-let monsterHealth;
-let inventory = ["stick"];
+let monsterHealth;  /*Mh is not assigned a value because i have more then 1 monster*/
+let inventory = ["stick"];  /*defaul weapon*/
 
+
+/*getting my html elements*/
 const button1 = document.querySelector('#button1');
 const button2 = document.querySelector("#button2");
 const button3 = document.querySelector("#button3");
@@ -16,12 +20,17 @@ const goldText = document.querySelector("#goldText");
 const monsterStats = document.querySelector("#monsterStats");
 const monsterName = document.querySelector("#monsterName");
 const monsterHealthText = document.querySelector("#monsterHealth");
+
+
+/*weapons*/
 const weapons = [
   { name: 'stick', power: 5 },
   { name: 'dagger', power: 30 },
   { name: 'claw hammer', power: 50 },
   { name: 'sword', power: 100 }
 ];
+
+/*monsters*/
 const monsters = [
   {
     name: "slime",
@@ -39,6 +48,9 @@ const monsters = [
     health: 300
   }
 ]
+
+/*player location*/
+/*the button text and functions change based on player location(text also)*/
 const locations = [
     {
         name: "town square",
@@ -95,6 +107,8 @@ button1.onclick = goStore;
 button2.onclick = goCave;
 button3.onclick = fightDragon;
 
+
+/* Reusable function*/
 function update(location) {
   monsterStats.style.display = "none";
   button1.innerText = location["button text"][0];
@@ -106,6 +120,8 @@ function update(location) {
   text.innerText = location.text;
 }
 
+
+/*use the data in objects in the location array based on the index*/
 function goTown() {
   update(locations[0]);
 }
@@ -118,12 +134,15 @@ function goCave() {
   update(locations[2]);
 }
 
+
+
+
 function buyHealth() {
   if (gold >= 10) {
     gold -= 10;
     health += 10;
-    goldText.innerText = gold;
-    healthText.innerText = health;
+    goldText.innerText = gold;  /*updates the gold value*/
+    healthText.innerText = health; /*updates the health value*/
   } else {
     text.innerText = "You do not have enough gold to buy health.";
   }
@@ -133,7 +152,7 @@ function buyWeapon() {
   if (currentWeapon < weapons.length - 1) {
     if (gold >= 30) {
       gold -= 30;
-      currentWeapon++;
+      currentWeapon++; /*will increament by 1 0 was stick now it will be 1 dagger"*/
       goldText.innerText = gold;
       let newWeapon = weapons[currentWeapon].name;
       text.innerText = "You now have a " + newWeapon + ".";
@@ -189,7 +208,7 @@ function attack() {
   text.innerText += " You attack it with your " + weapons[currentWeapon].name + ".";
   health -= getMonsterAttackValue(monsters[fighting].level);
   if (isMonsterHit()) {
-    monsterHealth -= weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1;    
+    monsterHealth -= weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1;    /*caculates how much health the monster losses*/
   } else {
     text.innerText += " You miss.";
   }
@@ -200,9 +219,9 @@ function attack() {
   } else if (monsterHealth <= 0) {
     fighting === 2 ? winGame() : defeatMonster();
   }
-  if (Math.random() <= .1 && inventory.length !== 1) {
+  if (Math.random() <= .1 && inventory.length !== 1) { /* your weapon might brealk while fighting if you have more tha 1*/
     text.innerText += " Your " + inventory.pop() + " breaks.";
-    currentWeapon--;
+    currentWeapon--; 
   }
 }
 
@@ -221,7 +240,7 @@ function dodge() {
 }
 
 function defeatMonster() {
-  gold += Math.floor(monsters[fighting].level * 6.7);
+  gold += Math.floor(monsters[fighting].level * 6.7); /*determine how much gold is added to player after a victory*/
   xp += monsters[fighting].level;
   goldText.innerText = gold;
   xpText.innerText = xp;
@@ -235,7 +254,7 @@ function lose() {
 function winGame() {
   update(locations[6]);
 }
-
+/*restart the game*/
 function restart() {
   xp = 0;
   health = 100;
@@ -248,6 +267,7 @@ function restart() {
   goTown();
 }
 
+/*hidden feature*/
 function easterEgg() {
   update(locations[7]);
 }
