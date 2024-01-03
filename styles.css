@@ -1,11 +1,14 @@
 body {
   background-color: #00000c;
+  font-size: 1.5rem;
+  
 }
 
 #text {
   background-color: #0a0a23;
   color: #ffffff;
   padding: 10px;
+  
 }
 
 #game {
@@ -15,6 +18,7 @@ body {
   color: #ffffff;
   margin: 30px auto 0px;
   padding: 10px;
+  border-radius: 20px;
 }
 
 #controls,
@@ -42,4 +46,18 @@ button {
   background-color: #feac32;
   background-image: linear-gradient(#fecc4c, #ffac33);
   border: 3px solid #feac32;
+  font-size: 1.5rem;
+  margin: .5rem;
+}
+
+.visuals{
+  display: flex;
+  gap: 1rem;
+}
+.img-store{
+  height: 400px;
+  width: 600px;
+  border-radius: 10px;
+  align-self: center;
+  display: none;
 }

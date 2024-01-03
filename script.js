@@ -20,6 +20,7 @@ const goldText = document.querySelector("#goldText");
 const monsterStats = document.querySelector("#monsterStats");
 const monsterName = document.querySelector("#monsterName");
 const monsterHealthText = document.querySelector("#monsterHealth");
+const storeImage = document.querySelector(".img-store")
 
 
 /*weapons*/
@@ -111,6 +112,7 @@ button3.onclick = fightDragon;
 /* Reusable function*/
 function update(location) {
   monsterStats.style.display = "none";
+  storeImage.style.display = "none";
   button1.innerText = location["button text"][0];
   button2.innerText = location["button text"][1];
   button3.innerText = location["button text"][2];
@@ -128,6 +130,7 @@ function goTown() {
 
 function goStore() {
   update(locations[1]);
+  storeImage.style.display = "block";
 }
 
 function goCave() {
