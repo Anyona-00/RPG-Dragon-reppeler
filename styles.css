@@ -1,7 +1,10 @@
 body {
   background-color: #00000c;
   font-size: 1.5rem;
-  
+  background-image: url(https://thenerdd.files.wordpress.com/2021/05/1.jpg?w=1200);
+  background-position: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 #text {
@@ -56,33 +59,15 @@ button {
   gap: 1rem;
 }
 
-.img-store{
+.img-cave,.img-store,.img-slime,.img-beast,.img-dragon{
   height: 400px;
   width: 600px;
   border-radius: 10px;
-  display: none;
-}
-
-.img-cave{
-  height: 400px;
-  width: 600px;
-  border-radius: 10px;
- margin-left: 616px;
+ margin-left: auto;
+ margin-right: auto;
  display: none;
 }
 
-.img-slime{
-  margin-left: 200px;
-  border-radius: 20px;
-  display: none;
-}
 
 
-.img-beast{
-  height: 400px;
-  width: 600px;
-  border-radius: 10px;
- margin-left: 200px;
- display: none;
- 
-}
+
