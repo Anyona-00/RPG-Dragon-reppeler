@@ -69,5 +69,17 @@ button {
 }
 
 
+@media screen and (max-width:600px) {
+
+  body {
+  
+  height: 100vh;
+}
+
+.img-cave,.img-store,.img-slime,.img-beast,.img-dragon{
+  height: 200px;
+  width: 300px;
+}
 
 
+}
