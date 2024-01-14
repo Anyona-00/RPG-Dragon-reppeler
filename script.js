@@ -114,7 +114,7 @@ button2.onclick = goCave;
 button3.onclick = fightDragon;
 
 
-/* Reusable function*/
+/* Reusable  function*/
 function update(location) {
   monsterStats.style.display = "none";
   storeImage.style.display = "none";
@@ -153,7 +153,6 @@ function goCave() {
 
 
 
-
 function buyHealth() {
   if (gold >= 10) {
     gold -= 10;
@@ -169,7 +168,7 @@ function buyWeapon() {
   if (currentWeapon < weapons.length - 1) {
     if (gold >= 30) {
       gold -= 30;
-      currentWeapon++; /*will increament by 1 0 was stick now it will be 1 dagger"*/
+      currentWeapon++; /*will increament by 1, 0 was stick now it will be 1 dagger"*/
       goldText.innerText = gold;
       let newWeapon = weapons[currentWeapon].name;
       text.innerText = "You now have a " + newWeapon + ".";
