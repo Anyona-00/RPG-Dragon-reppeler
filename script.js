@@ -56,7 +56,7 @@ const monsters = [
 ]
 
 /*player location*/
-/*the button text and functions change based on player location(text also)*/
+/*the button text and functions change based on player location (text also)*/
 const locations = [
     {
         name: "town square",
