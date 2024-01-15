@@ -56,7 +56,7 @@ const monsters = [
 ]
 
 /*player location*/
-/*the button text and functions change based on player location (text also)*/
+/*the button text and functions change based on player location(text also)*/
 const locations = [
     {
         name: "town square",
@@ -114,7 +114,7 @@ button2.onclick = goCave;
 button3.onclick = fightDragon;
 
 
-/* Reusable  function*/
+/*Reusable function*/
 function update(location) {
   monsterStats.style.display = "none";
   storeImage.style.display = "none";
@@ -158,7 +158,7 @@ function buyHealth() {
     gold -= 10;
     health += 10;
     goldText.innerText = gold;  /*updates the gold value*/
-    healthText.innerText = health; /*update the health value*/
+    healthText.innerText = health; /*updates the health value*/
   } else {
     text.innerText = "You do not have enough gold to buy health.";
   }
