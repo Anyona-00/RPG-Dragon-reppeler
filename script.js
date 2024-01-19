@@ -1,12 +1,12 @@
 
 
-let xp = 0;  /*XP expience points*/
+let xp = 0;  /*XP experience points*/
 let health = 100;
 let gold = 50;
 let currentWeapon = 0;
 let fighting;
-let monsterHealth;  /*Mh is not assigned a value because i have more then 1 monster*/
-let inventory = ["stick"];  /*defaul weapon*/
+let monsterHealth;  /*Mh is not assigned a value because I have more than 1 monster*/
+let inventory = ["stick"];  /*default weapon*/
 
 
 /*getting my html elements*/
