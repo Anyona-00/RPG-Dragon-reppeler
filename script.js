@@ -60,7 +60,7 @@ const monsters = [
 const locations = [
     {
         name: "town square",
-        "button text": ["Go to store", "Go to cave", "Fight dragon"],
+        "button text": ["Go to store", "Go to the cave", "Fight dragon"],
         "button functions": [goStore, goCave, fightDragon],
         text: "You are in the town square. You see a sign that says \"Store\"."
     },
@@ -168,7 +168,7 @@ function buyWeapon() {
   if (currentWeapon < weapons.length - 1) {
     if (gold >= 30) {
       gold -= 30;
-      currentWeapon++; /*will increament by 1, 0 was stick now it will be 1 dagger"*/
+      currentWeapon++; /*will increment by 1, 0 was stick now it will be 1 dagger"*/
       goldText.innerText = gold;
       let newWeapon = weapons[currentWeapon].name;
       text.innerText = "You now have a " + newWeapon + ".";
@@ -227,7 +227,7 @@ function attack() {
   text.innerText += " You attack it with your " + weapons[currentWeapon].name + ".";
   health -= getMonsterAttackValue(monsters[fighting].level);
   if (isMonsterHit()) {
-    monsterHealth -= weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1;    /*caculates how much health the monster losses*/
+    monsterHealth -= weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1;    /*calculates how much health the monster losses*/
   } else {
     text.innerText += " You miss.";
   }
@@ -238,7 +238,7 @@ function attack() {
   } else if (monsterHealth <= 0) {
     fighting === 2 ? winGame() : defeatMonster();
   }
-  if (Math.random() <= .1 && inventory.length !== 1) { /* your weapon might brealk while fighting if you have more tha 1*/
+  if (Math.random() <= .1 && inventory.length !== 1) { /* your weapon might break while fighting if you have more than 1*/
     text.innerText += " Your " + inventory.pop() + " breaks.";
     currentWeapon--; 
   }
@@ -259,7 +259,7 @@ function dodge() {
 }
 
 function defeatMonster() {
-  gold += Math.floor(monsters[fighting].level * 6.7); /*determine how much gold is added to player after a victory*/
+  gold += Math.floor(monsters[fighting].level * 6.7); /*determine how much gold is added to the player after a victory*/
   xp += monsters[fighting].level;
   goldText.innerText = gold;
   xpText.innerText = xp;
